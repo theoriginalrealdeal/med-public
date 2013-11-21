@@ -1,7 +1,13 @@
 <?php
 session_start();
-date_default_timezone_set('America/Chicago');
-if (isset($_POST["i"])) die(var_dump($_POST));
+require_once("bootstrap.php");
+$med = new med();
+if (isset($_POST["i"])) {
+
+	$user = new user();
+	$user->login($_POST);
+
+	}
 ?>
 <!doctype html>
 <html class="no-js">
@@ -29,25 +35,28 @@ Your Logo Here
 <input type="hidden" name="i" value="<?=session_id();?>">
 <input type="hidden" name="t" value="<?=strtotime(date("Y-m-d H:i:s"));?>">
 <input type="hidden" name="p" value="<?=base64_encode($_SERVER["REMOTE_ADDR"]);?>">
+<input type="hidden" name="d" value="<?=$debug?"true":"false";?>">
 <div class="head">
-Please log in
+Please Log In Below
 </div>
+<?php if (isset($errorArray["login"])) echo $errorArray["login"][0]; ?>
 <label for="username">Username</label><br>
 <input type="text" name="username" id="username" size="20" maxlength="40"><br>
 <label for="password">Password</label><br>
 <input type="password" name="password" id="password" size="20" maxlength="40">
-</p>
+<p>
 <input type="submit" value="Log In">
+</p>
 </form>
 <div class="loginhelp">
-<p>
 <a href="javascript:;">Reset Password</a> || <a href="javascript:;">About</a>
-</p>
 </div>
 </div>
 </div>
 </div>
 <div class="copyright">
+<a href="http://jigsaw.w3.org/css-validator/check/referer">css3</a> || 
+<a href="http://validator.w3.org/check?uri=<?=urlencode("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>&amp;charset=%28detect+automatically%29&amp;doctype=Inline&amp;group=0">html</a> || 
 &copy; 2013. V0.0.1a
 </div>
 </body>
