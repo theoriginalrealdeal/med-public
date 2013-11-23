@@ -20,8 +20,21 @@ class user {
 
 			$med = new med();
 			$a = $med->cleanInput($p);
+			$username = $a["username"];
 			$password = $med->hash($a["password"]);
-			return $this->buildError("login","Received: $password");
+			$d = new database();
+			$d->exec("SELECT * FROM users WHERE username = '$username'");
+			$u = $d->getResult();
+			$d->cleanse();
+			if (isset($u["id"])) {
+
+				$d->exec("SELECT * FROM passwords WHERE uid = $u[id] AND status = '1'");
+				$p = $d->getResult();
+				$d->cleanse();
+				if ($p["password"] == $password) $this->logUserIn($u);
+				else $this->buildError("login","Incorrect username or password");
+
+				}
 
 			}
 

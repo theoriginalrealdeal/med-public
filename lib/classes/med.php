@@ -2,6 +2,7 @@
 class med {
 
 	public $init = false;
+	public $version = "V0.0.2";
 	function __construct() {
 
 		$this->init = true;
@@ -21,6 +22,12 @@ class med {
 
 		$salt = "temporary salt";
 		return hash("whirlpool",$string);
+
+		}
+
+	public function copyright() {
+
+		return "&copy; 2013".(date("Y")>2013?"-".date("Y"):"").". ".$this->version;
 
 		}
 

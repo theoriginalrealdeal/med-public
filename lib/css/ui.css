@@ -1,0 +1,145 @@
+/* ui */
+div.banner {
+
+	height: 200px;
+	background-color: #6fc6e3;
+	border-bottom: 3px solid #3296b7;
+
+	}
+
+div.subbanner {
+
+	text-align: center;
+	font-size: 5em;
+	font-weight: bolder;
+	color: white;
+
+	}
+
+div.content {
+
+	padding: 50px;
+	font-size: 2em;
+
+	}
+
+div.banner div.iconholder {
+
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	margin: 3px;
+
+	}
+
+div.banner div.iconholder img {
+
+	border-width: 0;
+	max-height: 20px;
+	max-width: 20px;
+	opacity: .7;
+
+	}
+
+div.banner div.iconholder img:hover {
+
+	opacity: 1;
+	box-shadow: 0 0 3px white;
+
+	}
+
+
+div.copyright {
+
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	width: auto;
+	font-size: .75em;
+	color: gray;
+
+	}
+
+div.help_tip {
+
+	position: absolute;
+	width: auto;
+	padding: 10px;
+	color: red;
+	background-color: white;
+	border-radius: 5px;
+	border: 1px solid red;
+	opacity: 1;
+	font-weight: bolder;
+	font-size: 1.25em;
+	transition: opacity 1s ease-in-out;
+
+	}
+
+div.help_tip_out {
+
+	opacity: 0;
+
+	}
+
+div.info {
+
+	min-height: 200px;
+	background-color: #6fc6e3;
+	border-top: 3px solid #3296b7;
+	border-bottom: 3px solid #3296b7;
+	padding: 50px;
+	color: white;
+	font-size: 2em;
+
+	}
+
+div.info a {
+
+	color: white;
+	font-weight: bolder;
+
+	}
+
+div.info div.indent {
+
+	padding: 10px;
+	font-size: .8em;
+
+	}
+
+div.middle {
+
+	font-size: 2em;
+	padding: 50px;
+	position: relative;
+	bottom: 0px;
+
+	}
+
+div.middle a {
+
+	font-weight: bolder;
+	color: #3296b7;
+
+	}
+
+ul.dash li {
+
+	background: url('../../img/icons/lidash.png') no-repeat;
+	padding: 3px 0px 3px 55px;
+	list-style: none;
+	margin: 0;
+
+	}
+
+footer {
+
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: auto;
+	width: 100%;
+
+	}
+/* end ui */

@@ -1,3 +1,10 @@
+/* globals */
+html, body {
+
+	height: 100%;
+
+	}
+
 body {
 
 	padding: 0px;
@@ -14,145 +21,15 @@ a {
 
 	}
 
-div.banner {
+.bold {
 
-	height: 200px;
-	background-color: #6fc6e3;
-	border-bottom: 3px solid #3296b7;
-
-	}
-
-div.subbanner {
-
-	text-align: center;
-	font-size: 5em;
 	font-weight: bolder;
-	color: white;
 
 	}
 
-div.content {
+.underline {
 
-	padding: 50px;
-	font-size: 2em;
-
-	}
-
-div.banner img {
-
-	border-width: 0;
-	max-height: 20px;
-	max-width: 20px;
-	opacity: .7;
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	margin: 3px;
+	text-decoration: underline;
 
 	}
-
-div.banner img:hover {
-
-	opacity: 1;
-	box-shadow: 0 0 3px white;
-
-	}
-
-div.login {
-
-	margin: 0px auto;
-	text-align: center;
-	font-size: 1em;
-	border: 2px solid #3296b7;
-	background-color: #6fc6e3;
-	color: white;
-	border-radius: 10px;
-	width: 500px;
-
-	}
-
-div.loginbody {
-
-	text-align: center;
-
-	}
-
-div.login input {
-
-	padding: 0px;
-	margin: 0px;
-	font-size: .75em;
-
-	}
-
-div.login input[type=submit] {
-
-	width: 100%;
-	padding: 5px;
-	color: #2da0c6;
-	background-color: white;
-	border: 1px solid white;
-
-	}
-
-div.login input[type=submit]:hover {
-
-	color: #6fc6e3;
-	cursor: pointer;
-
-	}
-
-div.login div.loginhelp {
-
-	font-size: .5em;
-
-	}
-
-div.login div.loginhelp a {
-
-	color: white;
-
-	}
-
-div.head {
-
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	font-size: 1.25em;
-	background-color: white;
-	color: #6fc6e3;
-
-	}
-
-div.copyright {
-
-	position: fixed;
-	bottom: 0px;
-	right: 0px;
-	width: auto;
-	font-size: .75em;
-	color: gray;
-
-	}
-
-div.help_tip {
-
-	position: absolute;
-	width: auto;
-	padding: 10px;
-	color: red;
-	background-color: white;
-	border-radius: 5px;
-	border: 1px solid red;
-	opacity: 1;
-	font-weight: bolder;
-	font-size: 1.25em;
-	transition: opacity 1s ease-in-out;
-
-	}
-
-div.help_tip_out {
-
-	opacity: 0;
-
-	}
+/* end globals */
