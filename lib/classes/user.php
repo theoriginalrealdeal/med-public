@@ -3,11 +3,14 @@ class user {
 
 	public $uid = null;
 	private $auth = false;
+	public $u = array();
+	private $token = null;
 	function __construct($uid=null) {
 
 		if (is_numeric($uid)) {
 
 			$u = $this->db("SELECT * FROM users WHERE id = '$id'");
+			if (is_array($u)&&count($u)>0) $this->u = $u;
 
 			}
 
@@ -36,7 +39,39 @@ class user {
 
 				}
 
+			else {
+
+				$this->buildError("login","Incorrect username or password");
+
+				}
+
 			}
+
+		}
+
+	public function logUserIn($u=null) {
+
+		if (!is_array($u)||!isset($u["id"])||!is_numeric($u["id"])) $this->buildError("critical","Bad values passed to logUserIn(). Unable to proceed.");
+		else {
+
+			$msid = md5(session_id());
+			setcookie("msid",$msid));
+			$_SESSION["msid"] = $msid;
+			$_SESSION["uid"] = $u["id"];
+			$_SESSION["id"] = session_id();
+			$this->u = $u;
+			$this->generateToken($u["id"]);
+
+			}
+
+		}
+
+	public function authorizeUser($uid=null) {
+
+		$token = uniqid("MED_");
+		$this->token = $token;
+		$d = new database();
+		$d->exec("UPDATE users SET token = '$token' WHERE id = '$uid'");
 
 		}
 

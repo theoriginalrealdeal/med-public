@@ -14,6 +14,7 @@ if (isset($_POST["i"])) {
 <html class="no-js">
 <head>
 <meta charset="utf-8">
+<meta name="application-name" content="MED" data-MED-Version="<?=$med->version;?>" data-MED-License="true">
 <link rel="stylesheet" href="lib/css/base.css">
 <link rel="stylesheet" href="lib/css/ui.css">
 <link rel="stylesheet" href="lib/css/login.css">
