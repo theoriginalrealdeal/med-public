@@ -3,10 +3,9 @@ session_start();
 require_once("bootstrap.php");
 $med = new med();
 $license = new license();
-if (isset($_POST["i"])) {
+if (isset($_POST["i"]) && !$user->auth) {
 
-	$user = new user();
-	$user->login($_POST);
+	$chk = $user->login($_POST);
 
 	}
 ?>

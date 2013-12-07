@@ -29,6 +29,7 @@ class database {
 
 			$db = new PDO("mysql:host=$host;dbname=$dbname".($this->force_char?";charset=".$this->charset:""),$user,$password);
 			$this->connection = $db;
+			//if ($this->errmode) $db->setAttribute(
 
 			}
 
